@@ -57,7 +57,7 @@ export default function ProjectCard({
           {tags.map((tag) => (
             <li
               key={tag}
-              className="font-mono text-xs text-teal before:content-['--'] before:text-muted before:mr-0.5"
+              className="font-mono text-xs text-teal before:content-['#'] before:text-muted before:mr-0.5"
             >
               {tag.toLowerCase().replace(/\s+/g, "-")}
             </li>
@@ -72,7 +72,7 @@ export default function ProjectCard({
           rel="noopener noreferrer"
           className="mt-5 inline-flex items-center gap-1 font-mono text-sm text-amber hover:underline"
         >
-          view project <span aria-hidden>→</span>
+          Explore the project <span aria-hidden>→</span>
         </a>
       )}
     </article>

@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-20">
       <div className="font-mono text-sm text-teal">
-        <span className="text-muted">$</span> cat about.md
+        <span className="text-muted">#</span> About Me :
       </div>
 
       <div className="mt-3 flex items-center gap-5">
@@ -17,11 +17,11 @@ export default function AboutPage() {
           alt={siteConfig.name}
           width={72}
           height={72}
-          className="rounded-full border border-border object-cover"
+          className="border border-border object-cover"
         />
         <div>
-          <h1 className="text-3xl font-bold text-paper">About</h1>
-          <p className="font-mono text-sm text-muted">{siteConfig.location}</p>
+          <h1 className="text-3xl font-bold text-paper">Sushant Manjunath Naik</h1>
+          <p className="font-mono text-sm text-muted">📍 {siteConfig.location}</p>
         </div>
       </div>
 

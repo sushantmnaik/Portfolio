@@ -17,9 +17,9 @@ export default async function HomePage() {
     <div>
       {/* Hero */}
       <section className="mx-auto max-w-4xl px-6 pt-20 pb-16 sm:pt-28">
-        <div className="font-mono text-sm text-teal">
+        {/* <div className="font-mono text-sm text-teal">
           <span className="text-muted">$</span> whoami
-        </div>
+        </div> */}
         <div className="mt-3 flex items-center gap-5">
           <Image
             src={siteConfig.profileImage}
@@ -27,7 +27,7 @@ export default async function HomePage() {
             width={88}
             height={88}
             priority
-            className="rounded-full border border-border object-cover"
+            className=" border border-border object-cover"
           />
           <div>
             <h1 className="text-4xl font-bold leading-tight text-paper sm:text-5xl">
@@ -39,20 +39,26 @@ export default async function HomePage() {
           </div>
         </div>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-          {siteConfig.tagline}
+          💭 {siteConfig.tagline}
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
+          <Link
+            href="/about"
+            className="rounded-md bg-amber px-5 py-2.5 font-mono text-sm font-medium text-ink transition-opacity hover:opacity-90"
+          >
+            Explore more About me... →
+          </Link>
           <Link
             href="/projects"
             className="rounded-md bg-amber px-5 py-2.5 font-mono text-sm font-medium text-ink transition-opacity hover:opacity-90"
           >
-            view projects
+            View my projects... →
           </Link>
           <Link
             href="/contact"
             className="rounded-md border border-border px-5 py-2.5 font-mono text-sm text-paper transition-colors hover:border-teal"
           >
-            get in touch
+            Get in touch with me... 📧
           </Link>
         </div>
       </section>

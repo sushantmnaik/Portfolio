@@ -11,9 +11,9 @@ export default async function ProjectsPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-20">
-      <div className="font-mono text-sm text-teal">
+      {/* <div className="font-mono text-sm text-teal">
         <span className="text-muted">$</span> cat CHANGELOG.md
-      </div>
+      </div> */}
       <h1 className="mt-3 text-3xl font-bold text-paper">Projects</h1>
       <p className="mt-3 max-w-xl text-muted">
         Everything I&apos;ve shipped, newest first — laid out like a release

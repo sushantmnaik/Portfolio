@@ -4,7 +4,7 @@
 export const siteConfig = {
   name: "Sushant Naik",
   role: "Aspiring Full-Stack Web Developer",
-  tagline: "I build web apps with Next.js and React, and tell stories on the side.",
+  tagline: "I build web apps with Next.js and React and also with AI",
   location: "Yellapur, Uttara Kannada, Karnataka, India",
   bio: `I'm Sushant Naik, an aspiring full-stack web developer, creative
 storyteller, and content creator from Yellapur, Karnataka. My passion for
@@ -25,8 +25,21 @@ are both meaningful and engaging.`,
   phone: "+91 8618099283",
   profileImage: "/profile-pic.png",
   social: {
-    linkedin: "https://www.linkedin.com/in/sushantnaikofficial",
-  },
+  Instagram: "https://www.instagram.com/sushant_naik_official/",
+  Linkedin: "http://www.linkedin.com/in/sushant-naik-42a48b390",
+  YouTube: "https://www.youtube.com/@sushant_naik_official",
+  GitHub: "https://github.com/sushantmnaik",
+  Email: "mailto:sushantmnaik2008@gmail.com",
+  X: "https://x.com/sushant_naik_",
+  Facebook: "https://www.facebook.com/sushantnaikoffical/",
+  Discord: "https://discord.gg/sN2CFYZE",
+  ORCID: "https://orcid.org/0009-0005-6333-4299",
+  Hipi: "https://www.hipi.co.in/@sushant_naik_official",
+  WhatsApp: "https://whatsapp.com/channel/0029Va5wicVAO7RESSBVUU3A",
+  Telegram: "https://t.me/sushant_naik_official",
+  PicsArt: "https://picsart.com/u/sushantnaikofficial",
+  Bsky: "https://bsky.app/profile/sushantnaik.bsky.social"
+},
   // Shown on the About page as a skills/tools list.
   skills: [
     "HTML",
@@ -36,9 +49,9 @@ are both meaningful and engaging.`,
     "Next.js",
     "Python",
     "Flask",
+    "GitHub",
     "Bootstrap",
     "Tailwind CSS",
-    "GitHub",
     "Firebase",
     "PHP",
     "Three.js",
