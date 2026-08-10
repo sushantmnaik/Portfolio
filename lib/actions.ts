@@ -24,6 +24,7 @@ function parseProjectForm(formData: FormData) {
     tags: String(formData.get("tags") || ""),
     featured: formData.get("featured") === "on",
     sortOrder: Number(formData.get("sortOrder") || 0),
+    repo: String(formData.get("repo") || ""),
   };
 }
 

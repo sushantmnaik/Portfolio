@@ -26,7 +26,8 @@ db.exec(`
     tags TEXT NOT NULL DEFAULT '',
     featured INTEGER NOT NULL DEFAULT 0,
     sortOrder INTEGER NOT NULL DEFAULT 0,
-    createdAt TEXT NOT NULL DEFAULT (datetime('now'))
+    createdAt TEXT NOT NULL DEFAULT (datetime('now')),
+    repo TEXT NOT NULL DEFAULT ''
   );
 
   CREATE TABLE IF NOT EXISTS messages (
@@ -37,5 +38,14 @@ db.exec(`
     createdAt TEXT NOT NULL DEFAULT (datetime('now'))
   );
 `);
+
+// Migration: add the `repo` column (owner/name on GitHub, used to fetch
+// real dates) if this database was created before that column existed.
+const projectColumns = db.prepare("PRAGMA table_info(projects)").all() as {
+  name: string;
+}[];
+if (!projectColumns.some((col) => col.name === "repo")) {
+  db.exec(`ALTER TABLE projects ADD COLUMN repo TEXT NOT NULL DEFAULT ''`);
+}
 
 export default db;

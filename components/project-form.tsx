@@ -72,6 +72,21 @@ export default function ProjectForm({
 
       <div>
         <label className="block font-mono text-xs uppercase tracking-wider text-muted">
+          github repo (owner/name, optional)
+        </label>
+        <input
+          name="repo"
+          defaultValue={project?.repo ?? ""}
+          placeholder="sushantmnaik/Waideek-Playground"
+          className="mt-2 w-full rounded-md border border-border bg-surface px-3 py-2 text-paper outline-none focus:border-teal"
+        />
+        <p className="mt-1 font-mono text-[11px] text-muted">
+          if set, the version date shown on the site is pulled live from this repo&apos;s last GitHub push
+        </p>
+      </div>
+
+      <div>
+        <label className="block font-mono text-xs uppercase tracking-wider text-muted">
           sort order (lower = appears first)
         </label>
         <input

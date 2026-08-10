@@ -5,15 +5,15 @@ import ProjectCard from "@/components/project-card";
 
 export const metadata: Metadata = { title: "Projects" };
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
   const projects = getAllProjects();
-  const versioned = withVersions(projects);
+  const versioned = await withVersions(projects);
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-20">
-      <div className="font-mono text-sm text-teal">
+      {/* <div className="font-mono text-sm text-teal">
         <span className="text-muted">$</span> cat CHANGELOG.md
-      </div>
+      </div> */}
       <h1 className="mt-3 text-3xl font-bold text-paper">Projects</h1>
       <p className="mt-3 max-w-xl text-muted">
         Everything I&apos;ve shipped, newest first — laid out like a release
@@ -30,8 +30,8 @@ export default function ProjectsPage() {
         </p>
       ) : (
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          {versioned.map(({ project, version }) => (
-            <ProjectCard key={project.id} project={project} version={version} />
+          {versioned.map(({ project, version, date }) => (
+            <ProjectCard key={project.id} project={project} version={version} date={date} />
           ))}
         </div>
       )}

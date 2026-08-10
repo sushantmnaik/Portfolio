@@ -2,10 +2,10 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 
 const links = [
-  { href: "/", label: "home" },
-  { href: "/projects", label: "projects" },
-  { href: "/about", label: "about" },
-  { href: "/contact", label: "contact" },
+  { href: "/", label: "🏠︎ Home" },
+  { href: "/projects", label: "💻 Projects" },
+  { href: "/about", label: "👨🏻‍💼 About" },
+  { href: "/contact", label: "💬 Contact" },
 ];
 
 export default function SiteHeader() {
@@ -16,8 +16,8 @@ export default function SiteHeader() {
           href="/"
           className="font-mono text-sm text-paper hover:text-amber transition-colors"
         >
-          <span className="text-muted">~/</span>
-          {siteConfig.name.toLowerCase().replace(/\s+/g, "-")}
+          <span className="text-muted">@</span>
+          {siteConfig.name.toLowerCase().replace(/\s+/g, "-") }
         </Link>
         <nav className="flex gap-6 font-mono text-sm">
           {links.map((link) => (

@@ -10,6 +10,7 @@ export type Project = {
   featured: number;
   sortOrder: number;
   createdAt: string;
+  repo: string;
 };
 
 export function getAllProjects(): Project[] {
@@ -40,11 +41,12 @@ export function createProject(data: {
   tags: string;
   featured: boolean;
   sortOrder: number;
+  repo: string;
 }) {
   return db
     .prepare(
-      `INSERT INTO projects (title, description, imageUrl, projectUrl, tags, featured, sortOrder)
-       VALUES (@title, @description, @imageUrl, @projectUrl, @tags, @featured, @sortOrder)`
+      `INSERT INTO projects (title, description, imageUrl, projectUrl, tags, featured, sortOrder, repo)
+       VALUES (@title, @description, @imageUrl, @projectUrl, @tags, @featured, @sortOrder, @repo)`
     )
     .run({ ...data, featured: data.featured ? 1 : 0 });
 }
@@ -59,13 +61,15 @@ export function updateProject(
     tags: string;
     featured: boolean;
     sortOrder: number;
+    repo: string;
   }
 ) {
   return db
     .prepare(
       `UPDATE projects
        SET title = @title, description = @description, imageUrl = @imageUrl,
-           projectUrl = @projectUrl, tags = @tags, featured = @featured, sortOrder = @sortOrder
+           projectUrl = @projectUrl, tags = @tags, featured = @featured,
+           sortOrder = @sortOrder, repo = @repo
        WHERE id = @id`
     )
     .run({ ...data, featured: data.featured ? 1 : 0, id });

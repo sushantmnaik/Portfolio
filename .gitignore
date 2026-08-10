@@ -37,8 +37,8 @@ yarn-error.log*
 .vercel
 
 # database (local file, don't commit real data)
-/data/*.db
-/data/*.db-*
+# /data/*.db
+# /data/*.db-*
 
 # typescript
 *.tsbuildinfo
