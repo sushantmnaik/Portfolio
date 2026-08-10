@@ -172,11 +172,28 @@ My personal developer portfolio showcasing my projects, skills, social presence 
 
 ---
 
-# 🏆 GitHub Achievements
+
+# 🧩 LeetCode Journey
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=sushantmnaik&theme=flat&no-frame=true&margin-w=10&row=1&column=6" width="95%" />
+  <a href="https://leetcode.com/u/sushantmnaik/">
+    <img src="https://leetcard.jacoblin.cool/sushantmnaik?theme=dark&font=baloo&ext=heatmap" width="500" alt="Sushant Naik LeetCode Stats" />
+  </a>
 </p>
+
+<p align="center">
+  <a href="https://leetcode.com/u/sushantmnaik/">
+    <img src="https://img.shields.io/badge/LeetCode-sushantmnaik-FFA116?style=for-the-badge&logo=leetcode&logoColor=white" />
+  </a>
+</p>
+
+<p align="center">
+  🟢 12 Easy &nbsp; • &nbsp;
+  🟡 2 Medium &nbsp; • &nbsp;
+  🔴 1 Hard
+</p>
+
+> 🧠 Currently strengthening my Data Structures & Algorithms skills by solving problems consistently and learning different problem-solving patterns.
 
 ---
 
