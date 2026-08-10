@@ -271,28 +271,15 @@ Every project is an opportunity to experiment with a new technology, solve a pro
 <img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" />
 </a>
 
-<a href="https://www.hipi.co.in/@sushant_naik_official">
-<img src="https://img.shields.io/badge/Hipi-FF4F81?style=for-the-badge" />
-</a>
-
-<a href="https://whatsapp.com/channel/0029Va5wicVAO7RESSBVUU3A">
-<img src="https://img.shields.io/badge/WhatsApp_Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-</a>
-
 <a href="https://t.me/sushant_naik_official">
 <img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" />
 </a>
 
-<a href="https://picsart.com/u/sushantnaikofficial">
-<img src="https://img.shields.io/badge/PicsArt-000000?style=for-the-badge" />
-</a>
-
-<a href="https://bsky.app/profile/sushantnaik.bsky.social">
-<img src="https://img.shields.io/badge/Bluesky-0285FF?style=for-the-badge&logo=bluesky&logoColor=white" />
+<a href="https://gssoc.girlscript.org/profile/98a67f7b-a387-4eec-bd96-7d6d18e51ee0">
+<img src="https://img.shields.io/badge/GSSoC-2026-orange?style=for-the-badge" />
 </a>
 
 </p>
-
 ---
 
 # ⭐ Support My Work
