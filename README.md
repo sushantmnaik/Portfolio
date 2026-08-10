@@ -1,90 +1,309 @@
-# Sushant Naik — Portfolio
+# 👨‍💻 Sushant Naik
 
-A personal portfolio site built with Next.js, presented as a developer "changelog" —
-your projects appear as versioned releases. Includes a private admin dashboard
-to add/edit/delete projects and read contact form messages, backed by a local
-SQLite database.
+<p align="center">
+  <a href="https://sushantnaik.vercel.app">
+    <img src="https://capsule-render.vercel.app/api?type=waving&height=200&text=Sushant%20Naik&fontAlign=50&fontAlignY=38&desc=Developer%20%7C%20Creator%20%7C%20Builder&descAlignY=58&animation=fadeIn" width="100%" />
+  </a>
+</p>
 
-**Every tool used here is free and open-source, with no paid tiers or usage costs:**
-Next.js, React, Tailwind CSS, NextAuth.js, and SQLite (via `better-sqlite3`,
-just a local file — no database hosting bill, ever).
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=36BCF7&center=true&vCenter=true&width=700&lines=Hi%2C+I'm+Sushant+Naik+%F0%9F%91%8B;Full-Stack+Developer+%F0%9F%92%BB;Next.js+%7C+React+%7C+TypeScript;Building+AI-powered+applications+%F0%9F%A4%96;Always+learning+something+new+%F0%9F%9A%80" />
+</p>
 
-## 1. Install dependencies
+<p align="center">
+  <a href="https://sushantnaik.vercel.app">
+    <img src="https://img.shields.io/badge/🌐%20Portfolio-Visit%20Website-000000?style=for-the-badge" />
+  </a>
+  <a href="https://github.com/sushantmnaik">
+    <img src="https://img.shields.io/badge/GitHub-sushantmnaik-181717?style=for-the-badge&logo=github" />
+  </a>
+</p>
 
-```bash
-npm install
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=sushantmnaik&label=PROFILE%20VIEWS&color=0e75b6&style=for-the-badge" />
+</p>
+
+---
+
+## 🧑‍💻 About Me
+
+```typescript
+const sushant = {
+    name: "Sushant Naik",
+    role: "Developer & Creator",
+    location: "India 🇮🇳",
+
+    interests: [
+        "Web Development",
+        "Artificial Intelligence",
+        "Software Development",
+        "Creative Technology"
+    ],
+
+    currentlyLearning: [
+        "Data Structures & Algorithms",
+        "Advanced Next.js",
+        "Full-Stack Development",
+        "AI Engineering"
+    ],
+
+    philosophy: "Build. Learn. Break. Fix. Repeat."
+};
 ```
 
-## 2. Set up your environment file
+---
 
-```bash
-cp .env.local.example .env.local
-```
+# ⚡ Tech Stack
 
-Open `.env.local` and set:
-- `ADMIN_EMAIL` / `ADMIN_PASSWORD` — the login you'll use at `/admin/login`
-- `AUTH_SECRET` — a random secret (a working default is already filled in, but
-  generate your own for anything beyond local testing):
-  ```bash
-  node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
-  ```
+### 🌐 Frontend
 
-## 3. Create your database + admin login
+<p>
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,tailwind,bootstrap" />
+</p>
 
-```bash
-npm run seed
-```
+### ⚙️ Backend & Database
 
-This creates `data/portfolio.db` (a single file — your entire database) with
-your admin account and a few starter projects pulled from your profile
-(Waideek, Kumpix, Waideek Playgrounds, Kumpix Login System). Edit or delete
-them anytime from the admin dashboard.
+<p>
+  <img src="https://skillicons.dev/icons?i=nodejs,python,flask,php,mysql,mongodb,firebase" />
+</p>
 
-## 4. Run it
+### 🧰 Tools & Platforms
 
-```bash
-npm run dev
-```
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,vercel,postman,npm" />
+</p>
 
-- Public site: http://localhost:3000
-- Admin login: http://localhost:3000/admin/login
+### 🎨 Creative & 3D
 
-## Customizing
+<p>
+  <img src="https://skillicons.dev/icons?i=blender,threejs" />
+</p>
 
-- **Your info (name, bio, skills, socials):** edit `lib/config.ts` directly.
-- **Projects:** don't edit code — log into `/admin` and use the dashboard.
-- **Colors/fonts:** edit the CSS variables at the top of `app/globals.css`,
-  and the font choices in `app/layout.tsx`.
-- **Contact form submissions:** view them at `/admin/messages`.
+**Also exploring:** REST APIs • SEO • AI Prompting • Photo Editing • Video Editing
 
-## Deploying (optional, still free)
+---
 
-[Vercel's free tier](https://vercel.com) is the easiest way to put this
-online — connect your GitHub repo and it deploys automatically. Just add the
-same environment variables (`AUTH_SECRET`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`)
-in the Vercel project settings.
+# 🚀 Featured Projects
 
-**Note on hosting:** SQLite is a file on disk, which works great for running
-this locally or on a server/VM where the filesystem persists. Some serverless
-hosts (like Vercel) reset the filesystem on each deploy, so the database
-would reset too. For serverless hosting, you'd eventually want a hosted
-database instead — but that's a later problem, and not something you need to
-worry about to build, run, and use this site today.
+<table>
+<tr>
+<td width="50%">
 
-## Project structure
+### 📝 Kumpix
 
-```
-app/                  Pages and API routes (Next.js App Router)
-  admin/               Admin dashboard, login, project/message management
-  api/                 Auth and contact form API routes
-components/           Reusable UI pieces
-lib/
-  config.ts            <- your name/bio/skills/socials
-  db.ts                 SQLite connection + table setup
-  projects.ts           Project database queries
-  messages.ts            Contact message database queries
-  actions.ts             Server actions for admin CRUD
-  auth.ts                 NextAuth configuration
-scripts/seed.js        Creates your admin login + starter projects
-data/portfolio.db      Your database (created after `npm run seed`)
-```
+AI-powered description generator that turns words and topics into useful descriptions.
+
+**Built with**
+
+`React` `JavaScript` `Bootstrap` `Firebase` `Puppeteer`
+
+<a href="https://kumpix.web.app">🌐 Live Project</a>
+
+</td>
+
+<td width="50%">
+
+### 🤖 Waideek
+
+A free AI-powered chat responder designed to provide answers without requiring users to sign up.
+
+**Built with**
+
+`Next.js` `TypeScript` `Gemini` `Vercel`
+
+<a href="https://waideek.vercel.app">🌐 Live Project</a>
+
+</td>
+</tr>
+
+<tr>
+<td width="50%">
+
+### 🏎️ 3D Car Race
+
+A browser-based 3D driving experience experimenting with interactive environments and 3D graphics.
+
+**Built with**
+
+`Three.js` `JavaScript` `WebGL`
+
+</td>
+
+<td width="50%">
+
+### 🌐 Personal Portfolio
+
+My personal developer portfolio showcasing my projects, skills, social presence and development journey.
+
+**Built with**
+
+`Next.js` `TypeScript` `Tailwind CSS`
+
+<a href="https://sushantnaik.vercel.app">🌐 Visit Portfolio</a>
+
+</td>
+</tr>
+</table>
+
+---
+
+# 📊 GitHub Analytics
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=sushantmnaik&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&rank_icon=github" height="180" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sushantmnaik&layout=compact&hide_border=true&langs_count=8" height="180" />
+</p>
+
+---
+
+# 🔥 Contribution Streak
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=sushantmnaik&hide_border=true" width="70%" />
+</p>
+
+---
+
+# 📈 GitHub Activity
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=sushantmnaik&hide_border=true&area=true" width="95%" />
+</p>
+
+---
+
+# 🏆 GitHub Achievements
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=sushantmnaik&theme=flat&no-frame=true&margin-w=10&row=1&column=6" width="95%" />
+</p>
+
+---
+
+# 🧠 Currently Learning & Building
+
+* ⚛️ React & Next.js
+* 🧩 Data Structures & Algorithms
+* 🤖 AI-powered applications
+* 🌐 Full-stack web development
+* 🗄️ Database architecture
+* 🚀 Performance & deployment
+* 🎨 Creative technology & 3D web experiences
+
+---
+
+# 💻 Development Philosophy
+
+<p align="center">
+
+### `Build → Break → Debug → Learn → Improve → Repeat`
+
+</p>
+
+I learn best by actually building things.
+
+Every project is an opportunity to experiment with a new technology, solve a problem, understand why something works, and improve the next version.
+
+---
+
+# 🌎 Connect With Me
+
+<p align="center">
+
+<a href="https://www.instagram.com/sushant_naik_official/">
+<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+</a>
+
+<a href="http://www.linkedin.com/in/sushant-naik-42a48b390">
+<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+
+<a href="https://www.youtube.com/@sushant_naik_official">
+<img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
+</a>
+
+<a href="https://github.com/sushantmnaik">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+
+<a href="mailto:sushantmnaik2008@gmail.com">
+<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
+
+<a href="https://x.com/sushant_naik_">
+<img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" />
+</a>
+
+<a href="https://www.facebook.com/sushantnaikoffical/">
+<img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />
+</a>
+
+</p>
+
+---
+
+# 🌐 More Platforms
+
+<p align="center">
+
+<a href="https://discord.gg/sN2CFYZE">
+<img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" />
+</a>
+
+<a href="https://orcid.org/0009-0005-6333-4299">
+<img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" />
+</a>
+
+<a href="https://www.hipi.co.in/@sushant_naik_official">
+<img src="https://img.shields.io/badge/Hipi-FF4F81?style=for-the-badge" />
+</a>
+
+<a href="https://whatsapp.com/channel/0029Va5wicVAO7RESSBVUU3A">
+<img src="https://img.shields.io/badge/WhatsApp_Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+</a>
+
+<a href="https://t.me/sushant_naik_official">
+<img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" />
+</a>
+
+<a href="https://picsart.com/u/sushantnaikofficial">
+<img src="https://img.shields.io/badge/PicsArt-000000?style=for-the-badge" />
+</a>
+
+<a href="https://bsky.app/profile/sushantnaik.bsky.social">
+<img src="https://img.shields.io/badge/Bluesky-0285FF?style=for-the-badge&logo=bluesky&logoColor=white" />
+</a>
+
+</p>
+
+---
+
+# ⭐ Support My Work
+
+If you find one of my projects useful or interesting:
+
+⭐ Star the repository
+🐛 Report an issue
+💡 Suggest an improvement
+🤝 Contribute
+📢 Share it with others
+
+---
+
+<p align="center">
+
+### 🚀 Thanks for visiting!
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=3500&pause=1000&center=true&vCenter=true&width=600&lines=Thanks+for+stopping+by+%F0%9F%91%8B;Keep+building+%F0%9F%9A%80;Keep+learning+%F0%9F%A7%A0;Keep+creating+%F0%9F%8E%A8" />
+
+<br/>
+
+**Made with ❤️ and code by Sushant Naik**
+
+</p>
+
+<p align="center">
+  <a href="https://sushantnaik.vercel.app">
+    <img src="https://img.shields.io/badge/🌐%20Visit%20My%20Portfolio-Now-36BCF7?style=for-the-badge" />
+  </a>
+</p>
