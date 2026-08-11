@@ -4,6 +4,18 @@ import { siteConfig } from "@/lib/config";
 import { getFeaturedProjects, getAllProjects } from "@/lib/projects";
 import { withVersions } from "@/lib/version";
 import ProjectCard from "@/components/project-card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sushant Naik | Developer & Creator",
+
+  description:
+    "Welcome to the official portfolio of Sushant Naik — a developer and creator building web applications, AI-powered projects, and creative digital experiences.",
+
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default async function HomePage() {
   const allProjects = getAllProjects();

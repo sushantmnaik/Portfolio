@@ -2,7 +2,24 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/config";
 import ContactForm from "@/components/contact-form";
 
-export const metadata: Metadata = { title: "Contact" };
+export const metadata: Metadata = { 
+   title: "Contact",
+
+  description:
+    "Contact Sushant Naik for web development, software projects, collaborations, creative technology and other opportunities.",
+
+  alternates: {
+    canonical: "/contact",
+  },
+
+  openGraph: {
+    title: "Contact Sushant Naik",
+    description:
+      "Get in touch with Sushant Naik for development projects, collaborations and opportunities.",
+    url: "/contact",
+    type: "website",
+  }
+ };
 
 export default function ContactPage() {
   return (

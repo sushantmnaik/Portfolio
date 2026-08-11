@@ -3,7 +3,24 @@ import { getAllProjects } from "@/lib/projects";
 import { withVersions } from "@/lib/version";
 import ProjectCard from "@/components/project-card";
 
-export const metadata: Metadata = { title: "Projects" };
+export const metadata: Metadata = { 
+   title: "Projects",
+
+  description:
+    "Explore projects built by Sushant Naik, including web applications, AI-powered applications, games, and creative technology projects.",
+
+  alternates: {
+    canonical: "/projects",
+  },
+
+  openGraph: {
+    title: "Projects | Sushant Naik",
+    description:
+      "Explore web applications, AI projects, games and other digital projects created by Sushant Naik.",
+    url: "/projects",
+    type: "website",
+  },
+ };
 
 export default async function ProjectsPage() {
   const projects = getAllProjects();

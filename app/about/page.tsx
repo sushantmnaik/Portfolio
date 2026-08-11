@@ -2,7 +2,25 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 
-export const metadata: Metadata = { title: "About" };
+
+export const metadata: Metadata = {
+  title: "About Me",
+
+  description:
+    "Learn more about Sushant Naik, a developer and creator interested in web development, React, Next.js, Python, AI, and creative technology.",
+
+  alternates: {
+    canonical: "/about",
+  },
+
+  openGraph: {
+    title: "About Sushant Naik",
+    description:
+      "Learn more about Sushant Naik, his development journey, skills, interests and projects.",
+    url: "/about",
+    type: "profile",
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -62,7 +80,7 @@ export default function AboutPage() {
                 alt={badge.label}
                 width={72}
                 height={72}
-                className="h-16 w-16 object-contain sm:h-[72px] sm:w-[72px]"
+                className="h-16 w-16 object-contain sm:h-18 sm:w-18"
               />
               <span className="text-center font-mono text-[10px] leading-tight text-muted">
                 {badge.label}
