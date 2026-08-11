@@ -3,16 +3,21 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { auth, signOut } from "@/lib/auth";
+
 import {
   createProject,
   updateProject,
   deleteProject,
 } from "@/lib/projects";
+
 import { deleteMessage } from "@/lib/messages";
 
 async function requireAdmin() {
   const session = await auth();
-  if (!session) redirect("/admin/login");
+
+  if (!session) {
+    redirect("/admin/login");
+  }
 }
 
 function parseProjectForm(formData: FormData) {
@@ -30,36 +35,54 @@ function parseProjectForm(formData: FormData) {
 
 export async function createProjectAction(formData: FormData) {
   await requireAdmin();
-  createProject(parseProjectForm(formData));
+
+  await createProject(parseProjectForm(formData));
+
   revalidatePath("/");
   revalidatePath("/projects");
   revalidatePath("/admin");
+
   redirect("/admin");
 }
 
-export async function updateProjectAction(id: number, formData: FormData) {
+export async function updateProjectAction(
+  id: string,
+  formData: FormData
+) {
   await requireAdmin();
-  updateProject(id, parseProjectForm(formData));
+
+  await updateProject(
+    id,
+    parseProjectForm(formData)
+  );
+
   revalidatePath("/");
   revalidatePath("/projects");
   revalidatePath("/admin");
+
   redirect("/admin");
 }
 
-export async function deleteProjectAction(id: number) {
+export async function deleteProjectAction(id: string) {
   await requireAdmin();
-  deleteProject(id);
+
+  await deleteProject(id);
+
   revalidatePath("/");
   revalidatePath("/projects");
   revalidatePath("/admin");
 }
 
-export async function deleteMessageAction(id: number) {
+export async function deleteMessageAction(id: string) {
   await requireAdmin();
-  deleteMessage(id);
+
+  await deleteMessage(id);
+
   revalidatePath("/admin/messages");
 }
 
 export async function logoutAction() {
-  await signOut({ redirectTo: "/admin/login" });
+  await signOut({
+    redirectTo: "/admin/login",
+  });
 }

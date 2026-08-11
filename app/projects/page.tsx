@@ -23,7 +23,7 @@ export const metadata: Metadata = {
  };
 
 export default async function ProjectsPage() {
-  const projects = getAllProjects();
+  const projects =await getAllProjects();
   const versioned = await withVersions(projects);
 
   return (

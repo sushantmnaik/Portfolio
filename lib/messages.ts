@@ -1,31 +1,54 @@
-import db from "@/lib/db";
+import { adminDb } from "@/lib/firebase-admin";
 
 export type Message = {
-  id: number;
+  id: string;
   name: string;
   email: string;
   message: string;
   createdAt: string;
 };
 
-export function getAllMessages(): Message[] {
-  return db
-    .prepare("SELECT * FROM messages ORDER BY createdAt DESC")
-    .all() as Message[];
+export async function getAllMessages(): Promise<Message[]> {
+  const snapshot = await adminDb
+    .collection("messages")
+    .orderBy("createdAt", "desc")
+    .get();
+
+  return snapshot.docs.map((doc) => {
+    const data = doc.data();
+
+    return {
+      id: doc.id,
+      name: data.name,
+      email: data.email,
+      message: data.message,
+      createdAt: data.createdAt?.toDate?.()?.toISOString() ?? "",
+    };
+  });
 }
 
-export function createMessage(data: {
+export async function createMessage(data: {
   name: string;
   email: string;
   message: string;
 }) {
-  return db
-    .prepare(
-      "INSERT INTO messages (name, email, message) VALUES (@name, @email, @message)"
-    )
-    .run(data);
+  const docRef = await adminDb.collection("messages").add({
+    ...data,
+    createdAt: new Date(),
+  });
+
+  return {
+    id: docRef.id,
+  };
 }
 
-export function deleteMessage(id: number) {
-  return db.prepare("DELETE FROM messages WHERE id = ?").run(id);
+export async function deleteMessage(id: string) {
+  await adminDb
+    .collection("messages")
+    .doc(id)
+    .delete();
+
+  return {
+    success: true,
+  };
 }

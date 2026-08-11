@@ -1,39 +1,79 @@
-import db from "@/lib/db";
+import { adminDb } from "@/lib/firebase-admin";
 
 export type Project = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   imageUrl: string | null;
   projectUrl: string | null;
   tags: string;
-  featured: number;
+  featured: boolean;
   sortOrder: number;
   createdAt: string;
   repo: string;
 };
 
-export function getAllProjects(): Project[] {
-  return db
-    .prepare("SELECT * FROM projects ORDER BY sortOrder ASC, createdAt DESC")
-    .all() as Project[];
+function formatProject(
+  id: string,
+  data: FirebaseFirestore.DocumentData
+): Project {
+  return {
+    id,
+    title: data.title,
+    description: data.description,
+    imageUrl: data.imageUrl ?? null,
+    projectUrl: data.projectUrl ?? null,
+    tags: data.tags ?? "",
+    featured: Boolean(data.featured),
+    sortOrder: data.sortOrder ?? 0,
+    createdAt:
+      data.createdAt?.toDate?.()?.toISOString() ??
+      "",
+    repo: data.repo ?? "",
+  };
 }
 
-export function getFeaturedProjects(): Project[] {
-  return db
-    .prepare(
-      "SELECT * FROM projects WHERE featured = 1 ORDER BY sortOrder ASC, createdAt DESC"
-    )
-    .all() as Project[];
+export async function getAllProjects(): Promise<Project[]> {
+  const snapshot = await adminDb
+    .collection("projects")
+    .orderBy("sortOrder", "asc")
+    .orderBy("createdAt", "desc")
+    .get();
+
+  return snapshot.docs.map((doc) =>
+    formatProject(doc.id, doc.data())
+  );
 }
 
-export function getProjectById(id: number): Project | undefined {
-  return db.prepare("SELECT * FROM projects WHERE id = ?").get(id) as
-    | Project
-    | undefined;
+export async function getFeaturedProjects(): Promise<Project[]> {
+  const snapshot = await adminDb
+    .collection("projects")
+    .where("featured", "==", true)
+    .orderBy("sortOrder", "asc")
+    .orderBy("createdAt", "desc")
+    .get();
+
+  return snapshot.docs.map((doc) =>
+    formatProject(doc.id, doc.data())
+  );
 }
 
-export function createProject(data: {
+export async function getProjectById(
+  id: string
+): Promise<Project | undefined> {
+  const doc = await adminDb
+    .collection("projects")
+    .doc(id)
+    .get();
+
+  if (!doc.exists) {
+    return undefined;
+  }
+
+  return formatProject(doc.id, doc.data()!);
+}
+
+export async function createProject(data: {
   title: string;
   description: string;
   imageUrl: string;
@@ -43,16 +83,20 @@ export function createProject(data: {
   sortOrder: number;
   repo: string;
 }) {
-  return db
-    .prepare(
-      `INSERT INTO projects (title, description, imageUrl, projectUrl, tags, featured, sortOrder, repo)
-       VALUES (@title, @description, @imageUrl, @projectUrl, @tags, @featured, @sortOrder, @repo)`
-    )
-    .run({ ...data, featured: data.featured ? 1 : 0 });
+  const docRef = await adminDb
+    .collection("projects")
+    .add({
+      ...data,
+      createdAt: new Date(),
+    });
+
+  return {
+    id: docRef.id,
+  };
 }
 
-export function updateProject(
-  id: number,
+export async function updateProject(
+  id: string,
   data: {
     title: string;
     description: string;
@@ -64,17 +108,23 @@ export function updateProject(
     repo: string;
   }
 ) {
-  return db
-    .prepare(
-      `UPDATE projects
-       SET title = @title, description = @description, imageUrl = @imageUrl,
-           projectUrl = @projectUrl, tags = @tags, featured = @featured,
-           sortOrder = @sortOrder, repo = @repo
-       WHERE id = @id`
-    )
-    .run({ ...data, featured: data.featured ? 1 : 0, id });
+  await adminDb
+    .collection("projects")
+    .doc(id)
+    .update(data);
+
+  return {
+    success: true,
+  };
 }
 
-export function deleteProject(id: number) {
-  return db.prepare("DELETE FROM projects WHERE id = ?").run(id);
+export async function deleteProject(id: string) {
+  await adminDb
+    .collection("projects")
+    .doc(id)
+    .delete();
+
+  return {
+    success: true,
+  };
 }

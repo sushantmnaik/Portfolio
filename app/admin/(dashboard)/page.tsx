@@ -2,13 +2,14 @@ import Link from "next/link";
 import { getAllProjects } from "@/lib/projects";
 import { deleteProjectAction } from "@/lib/actions";
 
-export default function AdminDashboardPage() {
-  const projects = getAllProjects();
+export default async function AdminDashboardPage() {
+  const projects = await getAllProjects();
 
   return (
     <div>
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold text-paper">Projects</h1>
+
         <Link
           href="/admin/projects/new"
           className="rounded-md bg-amber px-4 py-2 font-mono text-sm font-medium text-ink hover:opacity-90"
@@ -31,16 +32,19 @@ export default function AdminDashboardPage() {
               <div className="min-w-0">
                 <p className="truncate font-medium text-paper">
                   {project.title}
-                  {project.featured === 1 && (
+
+                  {project.featured && (
                     <span className="ml-2 font-mono text-[10px] uppercase tracking-wider text-amber">
                       featured
                     </span>
                   )}
                 </p>
+
                 <p className="truncate font-mono text-xs text-muted">
                   {project.tags}
                 </p>
               </div>
+
               <div className="flex shrink-0 gap-3 font-mono text-sm">
                 <Link
                   href={`/admin/projects/${project.id}/edit`}
@@ -48,13 +52,17 @@ export default function AdminDashboardPage() {
                 >
                   edit
                 </Link>
+
                 <form
                   action={async () => {
                     "use server";
                     await deleteProjectAction(project.id);
                   }}
                 >
-                  <button type="submit" className="text-rose hover:underline">
+                  <button
+                    type="submit"
+                    className="text-rose hover:underline"
+                  >
                     delete
                   </button>
                 </form>
