@@ -29,5 +29,85 @@ export default async function HomePage() {
     featured.some((f) => f.id === v.project.id)
   );
 
-  // rest of your existing JSX...
+  return (
+    <main className="mx-auto max-w-6xl px-6 py-12">
+      {/* Hero */}
+      <section className="mb-16">
+        <p className="font-mono text-sm text-teal">
+          {siteConfig.name}
+        </p>
+
+        <h1 className="mt-3 text-4xl font-bold text-paper md:text-6xl">
+          Developer & Creator
+        </h1>
+
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
+          Building web applications, AI-powered projects, and creative
+          digital experiences.
+        </p>
+      </section>
+
+      {/* Featured Projects */}
+      {featuredVersioned.length > 0 && (
+        <section className="mb-16">
+          <div className="mb-6 flex items-center justify-between">
+            <h2 className="text-2xl font-semibold text-paper">
+              Featured Projects
+            </h2>
+
+            <Link
+              href="/projects"
+              className="font-mono text-sm text-teal hover:underline"
+            >
+              view all →
+            </Link>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {featuredVersioned.map((item) => (
+              <ProjectCard
+                key={item.project.id}
+                project={item.project}
+                version={item.version}
+                date={item.date}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* All Projects */}
+      <section>
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-2xl font-semibold text-paper">
+            Projects
+          </h2>
+
+          <Link
+            href="/projects"
+            className="font-mono text-sm text-teal hover:underline"
+          >
+            view all →
+          </Link>
+        </div>
+
+        {versioned.length === 0 ? (
+          <p className="font-mono text-sm text-muted">
+            No projects yet.
+          </p>
+        ) : (
+          <div className="grid gap-5 md:grid-cols-2">
+            {versioned.map((item) => (
+              <ProjectCard
+                key={item.project.id}
+                project={item.project}
+                version={item.version}
+                date={item.date}
+              />
+            ))}
+          </div>
+        )}
+      </section>
+    </main>
+  );
 }

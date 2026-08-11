@@ -3,6 +3,7 @@ import { createMessage } from "@/lib/messages";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
+
   const name = String(body.name || "").trim();
   const email = String(body.email || "").trim();
   const message = String(body.message || "").trim();
@@ -13,6 +14,7 @@ export async function POST(req: NextRequest) {
       { status: 400 }
     );
   }
+
   if (!/^\S+@\S+\.\S+$/.test(email)) {
     return NextResponse.json(
       { error: "That doesn't look like a valid email address." },
@@ -20,6 +22,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  createMessage({ name, email, message });
+  await createMessage({ name, email, message });
+
   return NextResponse.json({ ok: true });
 }
