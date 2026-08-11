@@ -13,7 +13,7 @@ export default function SiteFooter() {
 
   return (
     
-      <footer className="border-t border-cyan-400/10 px-5 py-8">
+      <footer className="border-t border-cyan-400/10 px-5 py-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
 
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
 
@@ -48,10 +48,10 @@ export default function SiteFooter() {
            
 {links.map((sm)=>(
             <Link
-              href={sm[0]}
+              href={sm[1]}
               className="text-gray-500 transition hover:text-cyan-400"
             >
-              {sm[1]}
+              {sm[0]}
             </Link>)
 
 )}
