@@ -1,8 +1,15 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
+import {
+  getFeaturedProjects,
+  getAllProjects,
+} from "@/lib/projects";
+import { withVersions } from "@/lib/version";
+import type { Metadata } from "next";
+
 
 const links = [
-  { href: "/", label: "🏠︎ Home" },
+  { href: "/", label: "🏠︎ Home"},
   { href: "/projects", label: "💻 Projects" },
   { href: "/about", label: "👨🏻‍💼 About" },
   { href: "/contact", label: "💬 Contact" },
@@ -10,27 +17,70 @@ const links = [
 
 export default function SiteHeader() {
   return (
-    <header className="border-b border-border">
-      <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-5">
-        <Link
-          href="/"
-          className="font-mono text-sm text-paper hover:text-amber transition-colors"
-        >
-          <span className="text-muted">@</span>
-          {siteConfig.name.toLowerCase().replace(/\s+/g, "-") }
-        </Link>
-        <nav className="flex gap-6 font-mono text-sm">
-          {links.map((link) => (
+     <header className="sticky top-0 z-50 border-b border-cyan-400/10 bg-[#02030a]/75 backdrop-blur-xl">
+
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+
+          <Link href="/" className="group flex items-center gap-3">
+
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-400/50 bg-cyan-400/5">
+
+              <span className="font-mono text-lg font-bold text-cyan-300">
+                SN
+              </span>
+
+              <span className="absolute inset-0 rounded-lg border border-purple-500/30 animate-ping opacity-20" />
+
+            </div>
+
+            <div>
+              <div className="font-mono text-sm font-bold tracking-widest text-white">
+                SUSHANT<span className="text-cyan-400">.</span>NAIK
+              </div>
+
+              <div className="font-mono text-[9px] tracking-[0.3em] text-gray-500">
+                DEVELOPER // CREATOR
+              </div>
+            </div>
+
+          </Link>
+
+
+          <nav className="hidden items-center gap-7 md:flex">
+
             <Link
-              key={link.href}
-              href={link.href}
-              className="text-muted hover:text-paper transition-colors"
+              href="/"
+              className="font-mono text-xs text-cyan-300"
             >
-              {link.label}
+              HOME
             </Link>
-          ))}
-        </nav>
-      </div>
-    </header>
+
+            <Link
+              href="/projects"
+              className="font-mono text-xs text-gray-400 transition hover:text-cyan-300"
+            >
+              PROJECTS
+            </Link>
+
+            <Link
+              href="/about"
+              className="font-mono text-xs text-gray-400 transition hover:text-cyan-300"
+            >
+              ABOUT
+            </Link>
+
+            <Link
+              href="/contact"
+              className="rounded border border-purple-500/40 px-4 py-2 font-mono text-xs text-purple-300 transition hover:border-cyan-400 hover:text-cyan-300"
+            >
+              CONTACT
+            </Link>
+
+          </nav>
+
+        </div>
+
+      </header>
+
   );
 }

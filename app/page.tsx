@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import { siteConfig } from "@/lib/config";
 import {
   getFeaturedProjects,
   getAllProjects,
@@ -27,7 +29,6 @@ const skills = [
   "PHP",
   "MySQL",
   "Firebase",
-  "MongoDB",
   "Tailwind CSS",
   "Bootstrap",
   "Three.js",
@@ -36,7 +37,7 @@ const skills = [
 
 const capabilities = [
   {
-    icon: "</>",
+    icon: "<S/>",
     title: "WEB APPS",
     text: "Modern responsive applications",
   },
@@ -78,10 +79,6 @@ export default async function HomePage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#02030a] text-white">
 
-      {/* =========================================================
-          BACKGROUND
-      ========================================================= */}
-
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(0,183,255,0.12),transparent_28%),radial-gradient(circle_at_20%_80%,rgba(145,0,255,0.10),transparent_25%),radial-gradient(circle_at_85%_20%,rgba(0,255,255,0.08),transparent_25%)]" />
@@ -97,81 +94,6 @@ export default async function HomePage() {
         <div className="absolute left-[55%] top-[15%] h-1 w-1 rounded-full bg-cyan-300 shadow-[0_0_15px_#00eaff] particle-4" />
 
       </div>
-
-
-      {/* =========================================================
-          NAVIGATION
-      ========================================================= */}
-
-      <header className="sticky top-0 z-50 border-b border-cyan-400/10 bg-[#02030a]/75 backdrop-blur-xl">
-
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-
-          <Link href="/" className="group flex items-center gap-3">
-
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-400/50 bg-cyan-400/5">
-
-              <span className="font-mono text-lg font-bold text-cyan-300">
-                SN
-              </span>
-
-              <span className="absolute inset-0 rounded-lg border border-purple-500/30 animate-ping opacity-20" />
-
-            </div>
-
-            <div>
-              <div className="font-mono text-sm font-bold tracking-widest text-white">
-                SUSHANT<span className="text-cyan-400">.</span>NAIK
-              </div>
-
-              <div className="font-mono text-[9px] tracking-[0.3em] text-gray-500">
-                DEVELOPER // CREATOR
-              </div>
-            </div>
-
-          </Link>
-
-
-          <nav className="hidden items-center gap-7 md:flex">
-
-            <Link
-              href="/"
-              className="font-mono text-xs text-cyan-300"
-            >
-              HOME
-            </Link>
-
-            <Link
-              href="/projects"
-              className="font-mono text-xs text-gray-400 transition hover:text-cyan-300"
-            >
-              PROJECTS
-            </Link>
-
-            <Link
-              href="/about"
-              className="font-mono text-xs text-gray-400 transition hover:text-cyan-300"
-            >
-              ABOUT
-            </Link>
-
-            <Link
-              href="/contact"
-              className="rounded border border-purple-500/40 px-4 py-2 font-mono text-xs text-purple-300 transition hover:border-cyan-400 hover:text-cyan-300"
-            >
-              CONTACT
-            </Link>
-
-          </nav>
-
-        </div>
-
-      </header>
-
-
-      {/* =========================================================
-          HERO
-      ========================================================= */}
 
       <section className="relative mx-auto min-h-[calc(100vh-73px)] max-w-7xl px-5">
 
@@ -198,18 +120,21 @@ export default async function HomePage() {
               </h1>
 
               <p className="mt-5 font-mono text-sm leading-7 text-gray-400">
-                Passionate developer building web applications,
-                AI-powered experiences and creative digital projects.
+                I am a Passionate developer; building :
+                <br/>
+                Web applications,
+                AI-powered experiences <br/>
+                <small>and</small>Creative digital projects.
               </p>
 
 
               <div className="mt-6 space-y-3">
 
                 {[
-                  ["</>", "Passionate Developer"],
-                  ["◈", "Creative Thinker"],
-                  ["λ", "Problem Solver"],
-                  ["∞", "Always Learning"],
+                  ["</>", "Passionate at Programming .."],
+                  ["◈", "Creative Thinking habit .. "],
+                  ["λ", "Problem Solving Hunger.."],
+                  ["∞", "Always Learning mind.."],
                 ].map(([icon, text]) => (
                   <div
                     key={text}
@@ -227,25 +152,7 @@ export default async function HomePage() {
 
             {/* QUOTE */}
 
-            <div className="hud-panel mt-5 border-purple-500/40 p-5">
-
-              <div className="text-2xl text-purple-400">
-                “
-              </div>
-
-              <p className="font-mono text-xs uppercase leading-6 text-purple-300">
-                THE ONLY WAY
-                <br />
-                TO DO GREAT WORK
-                <br />
-                IS TO LOVE WHAT YOU DO.
-              </p>
-
-              <p className="mt-3 font-mono text-[10px] text-gray-500">
-                — STEVE JOBS
-              </p>
-
-            </div>
+            
 
           </div>
 
@@ -254,7 +161,7 @@ export default async function HomePage() {
 
           <div className="order-1 flex flex-col items-center justify-center lg:order-2">
 
-            <div className="relative flex h-[330px] w-[330px] items-center justify-center sm:h-[410px] sm:w-[410px]">
+            <div className="relative flex h-82.5 w-82.5ems-center justify-center sm:h-102.5m:w-[410px]">
 
 
               {/* outer rings */}
@@ -286,21 +193,13 @@ export default async function HomePage() {
 
                 <div className="text-center">
 
-                  <div className="text-6xl font-black text-cyan-300 neon-text">
-                    &lt;/&gt;
-                  </div>
-
-                  <div className="mt-2 font-mono text-[9px] tracking-[0.4em] text-purple-300">
-                    BUILD
-                  </div>
-
-                  <div className="font-mono text-[9px] tracking-[0.4em] text-cyan-300">
-                    CREATE
-                  </div>
-
-                  <div className="font-mono text-[9px] tracking-[0.4em] text-purple-300">
-                    REPEAT
-                  </div>
+                  <Image
+                            src={siteConfig.profileImage}
+                            alt={siteConfig.name}
+                            width={72}
+                            height={72}
+                            className="imgre"
+                          />
 
                 </div>
 
@@ -460,9 +359,6 @@ export default async function HomePage() {
       </section>
 
 
-      {/* =========================================================
-          SKILLS
-      ========================================================= */}
 
       <section className="relative border-y border-cyan-400/10 bg-black/20 py-20">
 
@@ -483,9 +379,8 @@ export default async function HomePage() {
             </div>
 
             <span className="hidden font-mono text-[10px] text-gray-600 sm:block">
-              {skills.length} MODULES LOADED
+              {skills.length} Tech stacks Loaded ..
             </span>
-
           </div>
 
 
@@ -502,7 +397,7 @@ export default async function HomePage() {
               >
 
                 <div className="mb-3 text-2xl text-cyan-400 transition duration-300 group-hover:scale-110 group-hover:text-purple-400">
-                  {["◈", "</>", "JS", "TS", "⚛", "N", "Py", "◉"][index % 8]}
+                  {[ "<>", "#", "JS", "TS", "⚛", "N", "Py", "🌶","🐘","🐬","🔥","⚛","B","3","😼" ][index]}
                 </div>
 
                 <div className="font-mono text-[10px] tracking-wider text-gray-300">
@@ -523,10 +418,6 @@ export default async function HomePage() {
 
       </section>
 
-
-      {/* =========================================================
-          CAPABILITIES
-      ========================================================= */}
 
       <section className="mx-auto max-w-7xl px-5 py-20">
 
@@ -572,13 +463,8 @@ export default async function HomePage() {
 
       </section>
 
-
-      {/* =========================================================
-          PROJECT TIMELINE
-      ========================================================= */}
-
       {versioned.length > 0 && (
-        <section className="border-y border-purple-500/10 bg-purple-500/[0.015] py-20">
+        <section className="border-y border-purple-500/10 bg-purple-500/1.5 py-20">
 
           <div className="mx-auto max-w-7xl px-5">
 
@@ -623,7 +509,7 @@ export default async function HomePage() {
                         {item.version}
                       </span>
 
-                      <div className="mt-3 h-full w-px bg-gradient-to-b from-cyan-400/60 to-transparent" />
+                      <div className="mt-3 h-full w-px bg-linear-to-b from-cyan-400/60 to-transparent" />
 
                     </div>
 
@@ -665,9 +551,6 @@ export default async function HomePage() {
       )}
 
 
-      {/* =========================================================
-          STATS
-      ========================================================= */}
 
       <section className="mx-auto max-w-5xl px-5 py-20">
 
@@ -696,16 +579,11 @@ export default async function HomePage() {
 
       </section>
 
-
-      {/* =========================================================
-          CTA
-      ========================================================= */}
-
       <section className="relative mx-auto max-w-5xl px-5 pb-24">
 
-        <div className="relative overflow-hidden rounded-2xl border border-cyan-400/30 bg-gradient-to-br from-cyan-400/[0.08] via-transparent to-purple-500/[0.08] p-10 text-center sm:p-16">
+        <div className="relative overflow-hidden rounded-2xl border border-cyan-400/30 bg-linear-to-br from-cyan-400/8 via-transparent to-purple-500/8 p-10 text-center sm:p-16">
 
-          <div className="absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_20px_#00eaff]" />
+          <div className="absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-linear-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_20px_#00eaff]" />
 
           <p className="font-mono text-xs tracking-[0.4em] text-cyan-400">
             SYSTEM READY
@@ -729,14 +607,14 @@ export default async function HomePage() {
               href="/contact"
               className="neon-button"
             >
-              INITIALIZE CONTACT →
+              GET IN TOUCH WITH ME →
             </Link>
 
             <Link
               href="/projects"
               className="neon-button-secondary"
             >
-              EXPLORE PROJECTS
+              EXPLORE MY PROJECTS
             </Link>
 
           </div>
@@ -746,390 +624,8 @@ export default async function HomePage() {
       </section>
 
 
-      {/* =========================================================
-          FOOTER
-      ========================================================= */}
 
-      <footer className="border-t border-cyan-400/10 px-5 py-8">
-
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
-
-          <p className="font-mono text-[10px] text-gray-600">
-            © {new Date().getFullYear()} SUSHANT NAIK
-          </p>
-
-          <div className="flex gap-5 font-mono text-[10px]">
-
-            <a
-              href="https://github.com/sushantmnaik"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 transition hover:text-cyan-400"
-            >
-              GITHUB
-            </a>
-
-            <Link
-              href="/projects"
-              className="text-gray-500 transition hover:text-cyan-400"
-            >
-              PROJECTS
-            </Link>
-
-            <Link
-              href="/contact"
-              className="text-gray-500 transition hover:text-cyan-400"
-            >
-              CONTACT
-            </Link>
-
-          </div>
-
-          <p className="font-mono text-[10px] text-gray-700">
-            BUILD // CREATE // REPEAT
-          </p>
-
-        </div>
-
-      </footer>
-
-
-      {/* =========================================================
-          ANIMATION CSS
-      ========================================================= */}
-
-      <style>{`
-
-        .cyber-grid {
-          background-image:
-            linear-gradient(rgba(0,234,255,0.035) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,234,255,0.035) 1px, transparent 1px);
-          background-size: 55px 55px;
-          transform: perspective(700px) rotateX(60deg) scale(1.5);
-          transform-origin: center bottom;
-          animation: gridMove 18s linear infinite;
-        }
-
-        .scanlines {
-          background: repeating-linear-gradient(
-            to bottom,
-            transparent 0px,
-            transparent 3px,
-            rgba(255,255,255,0.08) 4px
-          );
-        }
-
-        .hud-panel {
-          position: relative;
-          border: 1px solid rgba(0,234,255,0.2);
-          background: rgba(3,7,18,0.72);
-          backdrop-filter: blur(12px);
-          clip-path: polygon(
-            0 14px,
-            14px 0,
-            calc(100% - 30px) 0,
-            100% 30px,
-            100% calc(100% - 14px),
-            calc(100% - 14px) 100%,
-            30px 100%,
-            0 calc(100% - 30px)
-          );
-        }
-
-        .neon-cyan {
-          box-shadow:
-            0 0 30px rgba(0,234,255,0.04),
-            inset 0 0 30px rgba(0,234,255,0.02);
-        }
-
-        .neon-text {
-          text-shadow:
-            0 0 8px rgba(0,234,255,0.8),
-            0 0 25px rgba(0,234,255,0.35);
-        }
-
-        .core {
-          animation: corePulse 3s ease-in-out infinite;
-        }
-
-        .orbit-line {
-          border: 1px dashed rgba(0,234,255,0.25);
-          transform: rotateX(65deg) rotateZ(20deg);
-        }
-
-        .orbit-dot {
-          border: 1px solid rgba(168,85,247,0.25);
-          transform: rotateX(65deg) rotateZ(-25deg);
-        }
-
-        .floating-badge {
-          padding: 8px 13px;
-          border: 1px solid;
-          background: rgba(2,3,10,0.85);
-          font-family: monospace;
-          font-size: 9px;
-          letter-spacing: 0.2em;
-          box-shadow: 0 0 20px rgba(0,234,255,0.05);
-          animation: float 4s ease-in-out infinite;
-        }
-
-        .floating-badge:nth-of-type(2) {
-          animation-delay: -1s;
-        }
-
-        .floating-badge:nth-of-type(3) {
-          animation-delay: -2s;
-        }
-
-        .floating-badge:nth-of-type(4) {
-          animation-delay: -3s;
-        }
-
-        .project-panel {
-          position: relative;
-          overflow: hidden;
-          border: 1px solid rgba(0,234,255,0.25);
-          background: rgba(3,7,18,0.72);
-          padding: 18px;
-          transition:
-            border-color 0.3s ease,
-            transform 0.3s ease,
-            box-shadow 0.3s ease;
-        }
-
-        .project-panel::before {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 35%;
-          height: 1px;
-          background: #00eaff;
-          box-shadow: 0 0 12px #00eaff;
-        }
-
-        .project-panel:hover {
-          border-color: rgba(0,234,255,0.65);
-          transform: translateX(-4px);
-          box-shadow: 0 0 30px rgba(0,234,255,0.08);
-        }
-
-        .skill-card {
-          border: 1px solid rgba(255,255,255,0.06);
-          background: rgba(3,7,18,0.7);
-          padding: 18px 12px;
-          text-align: center;
-          transition:
-            transform 0.3s ease,
-            border-color 0.3s ease,
-            background 0.3s ease;
-        }
-
-        .skill-card:hover {
-          transform: translateY(-7px);
-          border-color: rgba(0,234,255,0.45);
-          background: rgba(0,234,255,0.035);
-          box-shadow: 0 10px 35px rgba(0,234,255,0.06);
-        }
-
-        .capability-card {
-          border: 1px solid rgba(168,85,247,0.14);
-          background: rgba(3,7,18,0.65);
-          padding: 28px;
-          transition:
-            transform 0.3s ease,
-            border-color 0.3s ease,
-            box-shadow 0.3s ease;
-        }
-
-        .capability-card:hover {
-          transform: translateY(-8px);
-          border-color: rgba(0,234,255,0.4);
-          box-shadow: 0 15px 45px rgba(0,234,255,0.06);
-        }
-
-        .timeline-card {
-          border: 1px solid rgba(255,255,255,0.06);
-          background: rgba(3,7,18,0.55);
-          padding: 20px;
-          transition:
-            border-color 0.3s ease,
-            background 0.3s ease;
-        }
-
-        .timeline-card:hover {
-          border-color: rgba(168,85,247,0.35);
-          background: rgba(168,85,247,0.025);
-        }
-
-        .neon-button {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          border: 1px solid rgba(0,234,255,0.6);
-          background: rgba(0,234,255,0.06);
-          padding: 13px 22px;
-          font-family: monospace;
-          font-size: 11px;
-          letter-spacing: 0.1em;
-          color: #67e8f9;
-          transition: all 0.3s ease;
-        }
-
-        .neon-button:hover {
-          background: rgba(0,234,255,0.12);
-          border-color: #00eaff;
-          color: white;
-          box-shadow:
-            0 0 20px rgba(0,234,255,0.2),
-            inset 0 0 20px rgba(0,234,255,0.05);
-          transform: translateY(-2px);
-        }
-
-        .neon-button-secondary {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          border: 1px solid rgba(168,85,247,0.45);
-          background: rgba(168,85,247,0.05);
-          padding: 13px 22px;
-          font-family: monospace;
-          font-size: 11px;
-          letter-spacing: 0.1em;
-          color: #c084fc;
-          transition: all 0.3s ease;
-        }
-
-        .neon-button-secondary:hover {
-          border-color: #a855f7;
-          color: white;
-          box-shadow: 0 0 20px rgba(168,85,247,0.2);
-          transform: translateY(-2px);
-        }
-
-        @keyframes gridMove {
-          from {
-            background-position: 0 0;
-          }
-          to {
-            background-position: 0 550px;
-          }
-        }
-
-        @keyframes corePulse {
-          0%, 100% {
-            transform: scale(1);
-          }
-
-          50% {
-            transform: scale(1.04);
-          }
-        }
-
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-
-          50% {
-            transform: translateY(-12px);
-          }
-        }
-
-        @keyframes spinSlow {
-          from {
-            transform: rotate(0deg);
-          }
-
-          to {
-            transform: rotate(360deg);
-          }
-        }
-
-        @keyframes spinReverse {
-          from {
-            transform: rotate(360deg);
-          }
-
-          to {
-            transform: rotate(0deg);
-          }
-        }
-
-        .animate-spin-slow {
-          animation: spinSlow 22s linear infinite;
-        }
-
-        .animate-spin-reverse {
-          animation: spinReverse 16s linear infinite;
-        }
-
-        .particle-1 {
-          animation: particle1 8s ease-in-out infinite;
-        }
-
-        .particle-2 {
-          animation: particle2 10s ease-in-out infinite;
-        }
-
-        .particle-3 {
-          animation: particle3 7s ease-in-out infinite;
-        }
-
-        .particle-4 {
-          animation: particle4 11s ease-in-out infinite;
-        }
-
-        @keyframes particle1 {
-          0%, 100% {
-            transform: translate(0, 0);
-          }
-
-          50% {
-            transform: translate(80px, -50px);
-          }
-        }
-
-        @keyframes particle2 {
-          0%, 100% {
-            transform: translate(0, 0);
-          }
-
-          50% {
-            transform: translate(-70px, 80px);
-          }
-        }
-
-        @keyframes particle3 {
-          0%, 100% {
-            transform: translate(0, 0);
-          }
-
-          50% {
-            transform: translate(-60px, -40px);
-          }
-        }
-
-        @keyframes particle4 {
-          0%, 100% {
-            transform: translate(0, 0);
-          }
-
-          50% {
-            transform: translate(50px, 60px);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          *,
-          *::before,
-          *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-          }
-        }
-
-      `}</style>
+  
 
     </main>
   );

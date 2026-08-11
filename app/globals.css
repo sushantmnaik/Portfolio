@@ -58,3 +58,335 @@ h1, h2, h3, h4 {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+
+
+        .cyber-grid {
+          background-image:
+            linear-gradient(rgba(0,234,255,0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,234,255,0.035) 1px, transparent 1px);
+          background-size: 55px 55px;
+          transform: perspective(700px) rotateX(60deg) scale(1.5);
+          transform-origin: center bottom;
+          animation: gridMove 18s linear infinite;
+        }
+
+        .scanlines {
+          background: repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 3px,
+            rgba(255,255,255,0.08) 4px
+          );
+        }
+
+        .hud-panel {
+          position: relative;
+          border: 1px solid rgba(0,234,255,0.2);
+          background: rgba(3,7,18,0.72);
+          backdrop-filter: blur(12px);
+          clip-path: polygon(
+            0 14px,
+            14px 0,
+            calc(100% - 30px) 0,
+            100% 30px,
+            100% calc(100% - 14px),
+            calc(100% - 14px) 100%,
+            30px 100%,
+            0 calc(100% - 30px)
+          );
+        }
+
+        .neon-cyan {
+          box-shadow:
+            0 0 30px rgba(0,234,255,0.04),
+            inset 0 0 30px rgba(0,234,255,0.02);
+        }
+
+        .neon-text {
+          text-shadow:
+            0 0 8px rgba(0,234,255,0.8),
+            0 0 25px rgba(0,234,255,0.35);
+        }
+
+        .core {
+          animation: corePulse 3s ease-in-out infinite;
+        }
+
+        .orbit-line {
+          border: 1px dashed rgba(0,234,255,0.25);
+          transform: rotateX(65deg) rotateZ(20deg);
+        }
+
+        .orbit-dot {
+          border: 1px solid rgba(168,85,247,0.25);
+          transform: rotateX(65deg) rotateZ(-25deg);
+        }
+
+        .floating-badge {
+          padding: 8px 13px;
+          border: 1px solid;
+          background: rgba(2,3,10,0.85);
+          font-family: monospace;
+          font-size: 9px;
+          letter-spacing: 0.2em;
+          box-shadow: 0 0 20px rgba(0,234,255,0.05);
+          animation: float 4s ease-in-out infinite;
+        }
+
+        .floating-badge:nth-of-type(2) {
+          animation-delay: -1s;
+        }
+
+        .floating-badge:nth-of-type(3) {
+          animation-delay: -2s;
+        }
+
+        .floating-badge:nth-of-type(4) {
+          animation-delay: -3s;
+        }
+
+        .project-panel {
+          position: relative;
+          overflow: hidden;
+          border: 1px solid rgba(0,234,255,0.25);
+          background: rgba(3,7,18,0.72);
+          padding: 18px;
+          transition:
+            border-color 0.3s ease,
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        }
+
+        .project-panel::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 35%;
+          height: 1px;
+          background: #00eaff;
+          box-shadow: 0 0 12px #00eaff;
+        }
+
+        .project-panel:hover {
+          border-color: rgba(0,234,255,0.65);
+          transform: translateX(-4px);
+          box-shadow: 0 0 30px rgba(0,234,255,0.08);
+        }
+
+        .skill-card {
+          border: 1px solid rgba(255,255,255,0.06);
+          background: rgba(3,7,18,0.7);
+          padding: 18px 12px;
+          text-align: center;
+          transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            background 0.3s ease;
+        }
+
+        .skill-card:hover {
+          transform: translateY(-7px);
+          border-color: rgba(0,234,255,0.45);
+          background: rgba(0,234,255,0.035);
+          box-shadow: 0 10px 35px rgba(0,234,255,0.06);
+        }
+
+        .capability-card {
+          border: 1px solid rgba(168,85,247,0.14);
+          background: rgba(3,7,18,0.65);
+          padding: 28px;
+          transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
+        }
+
+        .capability-card:hover {
+          transform: translateY(-8px);
+          border-color: rgba(0,234,255,0.4);
+          box-shadow: 0 15px 45px rgba(0,234,255,0.06);
+        }
+
+        .timeline-card {
+          border: 1px solid rgba(255,255,255,0.06);
+          background: rgba(3,7,18,0.55);
+          padding: 20px;
+          transition:
+            border-color 0.3s ease,
+            background 0.3s ease;
+        }
+
+        .timeline-card:hover {
+          border-color: rgba(168,85,247,0.35);
+          background: rgba(168,85,247,0.025);
+        }
+
+        .neon-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(0,234,255,0.6);
+          background: rgba(0,234,255,0.06);
+          padding: 13px 22px;
+          font-family: monospace;
+          font-size: 11px;
+          letter-spacing: 0.1em;
+          color: #67e8f9;
+          transition: all 0.3s ease;
+        }
+
+        .neon-button:hover {
+          background: rgba(0,234,255,0.12);
+          border-color: #00eaff;
+          color: white;
+          box-shadow:
+            0 0 20px rgba(0,234,255,0.2),
+            inset 0 0 20px rgba(0,234,255,0.05);
+          transform: translateY(-2px);
+        }
+
+        .neon-button-secondary {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(168,85,247,0.45);
+          background: rgba(168,85,247,0.05);
+          padding: 13px 22px;
+          font-family: monospace;
+          font-size: 11px;
+          letter-spacing: 0.1em;
+          color: #c084fc;
+          transition: all 0.3s ease;
+        }
+
+        .neon-button-secondary:hover {
+          border-color: #a855f7;
+          color: white;
+          box-shadow: 0 0 20px rgba(168,85,247,0.2);
+          transform: translateY(-2px);
+        }
+
+        @keyframes gridMove {
+          from {
+            background-position: 0 0;
+          }
+          to {
+            background-position: 0 550px;
+          }
+        }
+
+        @keyframes corePulse {
+          0%, 100% {
+            transform: scale(1);
+          }
+
+          50% {
+            transform: scale(1.04);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+
+          50% {
+            transform: translateY(-12px);
+          }
+        }
+
+        @keyframes spinSlow {
+          from {
+            transform: rotate(0deg);
+          }
+
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes spinReverse {
+          from {
+            transform: rotate(360deg);
+          }
+
+          to {
+            transform: rotate(0deg);
+          }
+        }
+
+        .animate-spin-slow {
+          animation: spinSlow 22s linear infinite;
+        }
+
+        .animate-spin-reverse {
+          animation: spinReverse 16s linear infinite;
+        }
+
+        .particle-1 {
+          animation: particle1 8s ease-in-out infinite;
+        }
+
+        .particle-2 {
+          animation: particle2 10s ease-in-out infinite;
+        }
+
+        .particle-3 {
+          animation: particle3 7s ease-in-out infinite;
+        }
+
+        .particle-4 {
+          animation: particle4 11s ease-in-out infinite;
+        }
+
+        @keyframes particle1 {
+          0%, 100% {
+            transform: translate(0, 0);
+          }
+
+          50% {
+            transform: translate(80px, -50px);
+          }
+        }
+
+        @keyframes particle2 {
+          0%, 100% {
+            transform: translate(0, 0);
+          }
+
+          50% {
+            transform: translate(-70px, 80px);
+          }
+        }
+
+        @keyframes particle3 {
+          0%, 100% {
+            transform: translate(0, 0);
+          }
+
+          50% {
+            transform: translate(-60px, -40px);
+          }
+        }
+
+        @keyframes particle4 {
+          0%, 100% {
+            transform: translate(0, 0);
+          }
+
+          50% {
+            transform: translate(50px, 60px);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+          }
+        }

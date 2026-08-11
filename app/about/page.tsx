@@ -35,7 +35,7 @@ export default function AboutPage() {
           alt={siteConfig.name}
           width={72}
           height={72}
-          className="border border-border object-cover"
+          className="imgre"
         />
         <div>
           <h1 className="text-3xl font-bold text-paper">Sushant Manjunath Naik</h1>

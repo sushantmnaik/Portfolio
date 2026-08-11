@@ -1,29 +1,68 @@
 import { siteConfig } from "@/lib/config";
+import Link from "next/link";
+import {
+  getFeaturedProjects,
+  getAllProjects,
+} from "@/lib/projects";
+import { withVersions } from "@/lib/version";
+import type { Metadata } from "next";
 
 export default function SiteFooter() {
-  const year = new Date().getFullYear();
+  // const year = new Date().getFullYear();
   const links = Object.entries(siteConfig.social).filter(([, url]) => !!url);
 
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-4xl flex-col gap-2 px-6 py-8 font-mono text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
-        <p>
-          <span className="text-teal">©</span> {year} {siteConfig.name}
-        </p>
-        {links.length > 0 && (
-          <div className="flex gap-4">
-            {links.map(([label, url]) => (
-              <a
-                key={label}
-                href={url}
-                className="hover:text-paper transition-colors"
-              >
-                {label}
-              </a>
-            ))}
+    
+      <footer className="border-t border-cyan-400/10 px-5 py-8">
+
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
+
+          <p className="font-mono text-[10px] text-gray-600">
+            © {new Date().getFullYear()} SUSHANT NAIK
+          </p>
+
+          <div className="flex gap-5 font-mono text-[10px]">
+
+            {/* <a
+              href="https://github.com/sushantmnaik"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 transition hover:text-cyan-400"
+            >
+              GITHUB
+            </a>
+
+            <Link
+              href="/projects"
+              className="text-gray-500 transition hover:text-cyan-400"
+            >
+              PROJECTS
+            </Link>
+
+            <Link
+              href="/contact"
+              className="text-gray-500 transition hover:text-cyan-400"
+            >
+              CONTACT
+            </Link> */}
+           
+{links.map((sm)=>(
+            <Link
+              href={sm[0]}
+              className="text-gray-500 transition hover:text-cyan-400"
+            >
+              {sm[1]}
+            </Link>)
+
+)}
           </div>
-        )}
-      </div>
-    </footer>
+
+          <p className="font-mono text-[10px] text-gray-700">
+            BUILD // CREATE // DEPLOY
+          </p>
+
+        </div>
+
+      </footer>
   );
 }
