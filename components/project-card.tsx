@@ -30,7 +30,7 @@ export default function ProjectCard({
           )}
           <div className="flex items-baseline gap-3">
             <span className="font-mono text-sm text-teal">{version}</span>
-            {project.featured === 1 && (
+            {project.featured && (
               <span className="font-mono text-[10px] uppercase tracking-wider text-amber border border-amber/40 rounded-full px-2 py-0.5">
                 latest
               </span>

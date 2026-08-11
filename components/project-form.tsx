@@ -101,7 +101,7 @@ export default function ProjectForm({
         <input
           type="checkbox"
           name="featured"
-          defaultChecked={project?.featured === 1}
+          defaultChecked={project?.featured}
           className="h-4 w-4 accent-amber"
         />
         show on homepage as featured
