@@ -47,12 +47,13 @@ export default function SiteFooter() {
             </Link> */}
            
 {links.map((sm)=>(
+  <p className="mt-5 block border border-purple-500/30 bg-purple-500/5 p-4 text-center font-mono text-xs text-purple-300 transition hover:border-cyan-400/50 hover:text-cyan-300">
             <Link
               href={sm[1]}
               className="text-gray-500 transition hover:text-cyan-400"
             >
               {sm[0]}
-            </Link>)
+            </Link></p>)
 
 )}
           </div>
