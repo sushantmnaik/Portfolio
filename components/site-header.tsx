@@ -19,7 +19,7 @@ import type { Metadata } from "next";
 
 export default function SiteHeader() {
   return (
-     <header className="sticky top-0 z-50 border-b border-cyan-400/10 bg-[#02030a]/75 backdrop-blur-xl">
+     <header className="sticky top-0 z-50 border-b border-cyan-400/10 bg-[#02030a]/75 backdrop-blur-xl flex flex-col landscape:flex-row items-center justify-between gap-4 w-full">
 
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
 
@@ -56,7 +56,7 @@ export default function SiteHeader() {
           </Link>
 
 
-          <nav className="items-center gap-7 ">
+          <nav className="inline-block items-center gap-7 ">
 
             <Link
               href="/"
