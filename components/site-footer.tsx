@@ -13,15 +13,15 @@ export default function SiteFooter() {
 
   return (
     
-      <footer className="border-t border-cyan-400/10 px-5 py-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
+      <footer className="footer">
 
-        <div className="mx-auto flex  items-center justify-between gap-4 ">
+        <div className="items-center justify-between gap-4 ">
 
           <p className="font-mono text-[10px] text-gray-600">
             © {new Date().getFullYear()} SUSHANT NAIK
           </p>
 
-          <div className="flex gap-5 font-mono text-[10px]">
+          <div className=" gap-5 font-mono text-[10px]">
 
             {/* <a
               href="https://github.com/sushantmnaik"
