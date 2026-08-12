@@ -128,24 +128,7 @@ export default async function HomePage() {
               </p>
 
 
-              <div className="mt-6 space-y-3">
-
-                {[
-                  ["</>", "Passionate at Programming .."],
-                  ["◈", "Creative Thinking habit .. "],
-                  ["λ", "Problem Solving Hunger.."],
-                  ["∞", "Always Learning mind.."],
-                ].map(([icon, text]) => (
-                  <div
-                    key={text}
-                    className="flex items-center gap-3 font-mono text-sm text-gray-300"
-                  >
-                    <span className="text-cyan-400">{icon}</span>
-                    {text}
-                  </div>
-                ))}
-
-              </div>
+              
 
             </div>
 

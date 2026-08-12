@@ -47,7 +47,9 @@ export default function SiteHeader() {
               </div>
 
               <div className="font-mono text-[9px] tracking-[0.3em] text-gray-500">
-                DEVELOPER // CREATOR
+                @sushant_naik_official
+                <br/>
+                @sushantmnaik
               </div>
             </div>
 
@@ -58,28 +60,28 @@ export default function SiteHeader() {
 
             <Link
               href="/"
-              className="font-mono text-xs text-cyan-300"
+              className="rounded border border-green-500/40 mx-1 px-4 py-2 font-mono text-xs text-green-300 transition hover:border-cyan-400 hover:text-cyan-300"
             >
               HOME
             </Link>
 
             <Link
               href="/projects"
-              className="font-mono text-xs text-gray-400 transition hover:text-cyan-300"
+              className="rounded border border-green-500/40 mx-1 px-4 py-2 font-mono text-xs text-green-300 transition hover:border-cyan-400 hover:text-cyan-300"
             >
               PROJECTS
             </Link>
 
             <Link
               href="/about"
-              className="font-mono text-xs text-gray-400 transition hover:text-cyan-300"
+              className="rounded border border-green-500/40 mx-1 px-4 py-2 font-mono text-xs text-green-300 transition hover:border-cyan-400 hover:text-cyan-300"
             >
               ABOUT
             </Link>
 
             <Link
               href="/contact"
-              className="rounded border border-purple-500/40 px-4 py-2 font-mono text-xs text-purple-300 transition hover:border-cyan-400 hover:text-cyan-300"
+              className="rounded border border-green-500/40 mx-1 px-4 py-2 font-mono text-xs text-green-300 transition hover:border-cyan-400 hover:text-cyan-300"
             >
               CONTACT
             </Link>
