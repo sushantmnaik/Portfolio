@@ -33,12 +33,7 @@ are both meaningful and engaging.`,
   X: "https://x.com/sushant_naik_",
   Facebook: "https://www.facebook.com/sushantnaikoffical/",
   Discord: "https://discord.gg/sN2CFYZE",
-  ORCID: "https://orcid.org/0009-0005-6333-4299",
-  Hipi: "https://www.hipi.co.in/@sushant_naik_official",
-  WhatsApp: "https://whatsapp.com/channel/0029Va5wicVAO7RESSBVUU3A",
-  Telegram: "https://t.me/sushant_naik_official",
-  PicsArt: "https://picsart.com/u/sushantnaikofficial",
-  Bsky: "https://bsky.app/profile/sushantnaik.bsky.social"
+  ORCID: "https://orcid.org/0009-0005-6333-4299",  
 },
   // Shown on the About page as a skills/tools list.
   skills: [
