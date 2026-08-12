@@ -35,7 +35,7 @@ const skills = [
   "GitHub",
 ];
 
-const exp = ((new Date().getFullYear())-2020).toString + "+"
+const exp = ((new Date().getFullYear())-2020).toString() + "+"
 
 const stats = [
   { value: exp, label: "YEARS CODING" },
@@ -368,24 +368,6 @@ export default async function HomePage() {
       </section>
 
 
-      <section className="mx-auto max-w-7xl px-5 py-20">
-
-        <div className="mb-10">
-
-          <p className="font-mono text-xs tracking-[0.3em] text-purple-400">
-            // CURRENT_OPERATIONS
-          </p>
-
-          <h2 className="mt-2 text-3xl font-black italic">
-            WHAT I <span className="text-cyan-400">BUILD</span>
-          </h2>
-
-        </div>
-
-
-        
-
-      </section>
 
       {versioned.length > 0 && (
         <section className="border-y border-purple-500/10 bg-purple-500/1.5 py-20">
@@ -397,7 +379,10 @@ export default async function HomePage() {
               <div>
 
                 <p className="font-mono text-xs tracking-[0.3em] text-cyan-400">
-                  // BUILD_LOG
+                  
+          <h2 className="mt-2 text-3xl font-black italic">
+            WHAT I <span className="text-cyan-400">BUILD</span>
+          </h2>
                 </p>
 
                 <h2 className="mt-2 text-3xl font-black italic">
