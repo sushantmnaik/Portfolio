@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
+import Image from "next/image";
+
 import {
   getFeaturedProjects,
   getAllProjects,
@@ -8,12 +10,12 @@ import { withVersions } from "@/lib/version";
 import type { Metadata } from "next";
 
 
-const links = [
-  { href: "/", label: "🏠︎ Home"},
-  { href: "/projects", label: "💻 Projects" },
-  { href: "/about", label: "👨🏻‍💼 About" },
-  { href: "/contact", label: "💬 Contact" },
-];
+// const links = [
+//   { href: "/", label: "🏠︎ Home"},
+//   { href: "/projects", label: "💻 Projects" },
+//   { href: "/about", label: "👨🏻‍💼 About" },
+//   { href: "/contact", label: "💬 Contact" },
+// ];
 
 export default function SiteHeader() {
   return (
@@ -25,8 +27,14 @@ export default function SiteHeader() {
 
             <div className="relative flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-400/50 bg-cyan-400/5">
 
-              <span className="font-mono text-lg font-bold text-cyan-300">
-                SN
+              <span className="font-mono text-lg font-bold text-cyan-300 mask-circle">
+                <Image
+                                            src={siteConfig.profileImage}
+                                            alt={siteConfig.name}
+                                            width={42}
+                                            height={42}
+                                            className="imgre"
+                                          />
               </span>
 
               <span className="absolute inset-0 rounded-lg border border-purple-500/30 animate-ping opacity-20" />
