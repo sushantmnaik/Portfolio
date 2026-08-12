@@ -21,7 +21,7 @@ export default function SiteFooter() {
             © {new Date().getFullYear()} SUSHANT NAIK
           </p>
 
-          <div className=" gap-5 font-mono text-[10px]">
+          <div className="flex w-full max-w-full flex-wrap items-center justify-center gap-3 landscape:w-auto landscape:flex-nowrap">
 
             {/* <a
               href="https://github.com/sushantmnaik"
@@ -50,7 +50,7 @@ export default function SiteFooter() {
   // <p className="max-w-fit border border-purple-500/30 bg-purple-500/5 text-center text-purple-300 transition hover:border-cyan-400/50 hover:text-cyan-300">
             <Link
               href={sm[1]}
-              className="rounded border border-purple-500/40 mx-2 my-3  font-mono text-xs text-purple-300 hover:border-cyan-400 hover:text-cyan-300"
+              className="rounded border border-green-500/40 px-4 py-2 font-mono text-xs text-green-300 transition hover:border-cyan-400 hover:text-cyan-300"
             >
               {sm[0]}
             </Link>

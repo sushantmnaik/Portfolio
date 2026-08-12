@@ -144,7 +144,7 @@ export default async function HomePage() {
 
           <div className="order-1 flex flex-col items-center justify-center lg:order-2">
 
-            <div className="relative flex h-82.5 w-82.5ems-center justify-center sm:h-102.5m:w-[410px]">
+            <div >
 
 
               {/* outer rings */}
@@ -179,8 +179,8 @@ export default async function HomePage() {
                   <Image
                             src={siteConfig.profileImage}
                             alt={siteConfig.name}
-                            width={72}
-                            height={72}
+                            width={160}
+                            height={160}
                             className="imgre"
                           />
 
@@ -191,21 +191,7 @@ export default async function HomePage() {
 
               {/* FLOATING BADGES */}
 
-              <div className="floating-badge absolute -left-4 top-14 border-cyan-400/30 text-cyan-300">
-                CODE
-              </div>
-
-              <div className="floating-badge absolute -right-4 top-24 border-purple-500/30 text-purple-300">
-                AI
-              </div>
-
-              <div className="floating-badge absolute bottom-14 -left-2 border-purple-500/30 text-purple-300">
-                CREATE
-              </div>
-
-              <div className="floating-badge absolute -right-5 bottom-20 border-cyan-400/30 text-cyan-300">
-                SHIP
-              </div>
+             
 
             </div>
 

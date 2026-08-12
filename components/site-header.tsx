@@ -48,9 +48,7 @@ export default function SiteHeader() {
         </div>
 
         <div className="font-mono text-[9px] tracking-[0.3em] text-gray-500">
-          @sushant_naik_official
-          <br />
-          @sushantmnaik
+          Aspiring Full-Stack Web Developer | Next.js, React.js, Python Flask | Creator of Waideek & Kumpix | GSSoC’26 OpenSource Contributor
         </div>
       </div>
     </Link>
