@@ -95,7 +95,7 @@ export default async function HomePage() {
 
       </div>
 
-      <section className="relative mx-auto min-h-[calc(100vh-73px)] max-w-7xl px-5">
+      <section className="relative min-h-[calc(100vh-73px)] px-5">
 
         <div className="grid min-h-[calc(100vh-73px)] items-center gap-12 py-16 lg:grid-cols-[1fr_1.15fr_1fr]">
 
@@ -252,7 +252,7 @@ export default async function HomePage() {
 
           <div className="order-3">
 
-            <div className="mb-4 flex items-center justify-between">
+            <div className="mb-4  items-center justify-between">
 
               <h2 className="font-mono text-xl font-bold italic text-white">
                 FEATURED
@@ -279,10 +279,10 @@ export default async function HomePage() {
                     className="project-panel group"
                   >
 
-                    <div className="flex gap-4">
+                    <div className=" gap-4">
 
                       {item.project.imageUrl ? (
-                        <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-cyan-400/30 bg-black/50">
+                        <div className=" h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-cyan-400/30 bg-black/50">
 
                           <img
                             src={item.project.imageUrl}
@@ -300,7 +300,7 @@ export default async function HomePage() {
 
                       <div className="min-w-0 flex-1">
 
-                        <div className="flex items-center justify-between gap-2">
+                        <div className=" items-center justify-between gap-2">
 
                           <h3 className="truncate font-mono text-sm font-bold text-cyan-300">
                             {item.project.title.toUpperCase()}

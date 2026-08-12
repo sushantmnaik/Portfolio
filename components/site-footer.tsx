@@ -47,7 +47,7 @@ export default function SiteFooter() {
             </Link> */}
            
 {links.map((sm)=>(
-  <p className=" block border border-purple-500/30 bg-purple-500/5 text-center text-purple-300 transition hover:border-cyan-400/50 hover:text-cyan-300">
+  <p className=" inlane border border-purple-500/30 bg-purple-500/5 text-center text-purple-300 transition hover:border-cyan-400/50 hover:text-cyan-300">
             <Link
               href={sm[1]}
               className=" hover:text-cyan-400"
