@@ -44,11 +44,11 @@ export default function SiteHeader() {
 
       <div className="min-w-0">
         <div className="font-mono text-sm font-bold tracking-widest text-white">
-          SUSHANT<span className="text-cyan-400">.</span>NAIK
+          SUSHANT NAIK
         </div>
 
         <div className="font-mono text-[9px] tracking-[0.3em] text-gray-500">
-          Aspiring Full-Stack Web Developer | Next.js, React.js, Python Flask | Creator of Waideek & Kumpix | GSSoC’26 OpenSource Contributor
+          Aspiring Full-Stack Web Developer
         </div>
       </div>
     </Link>

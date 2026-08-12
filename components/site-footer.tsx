@@ -17,7 +17,7 @@ export default function SiteFooter() {
 
         <div className="items-center justify-between gap-4 ">
 
-          <p className="font-mono text-[10px] text-gray-600">
+          <p className="px-4 py-2 font-mono text-xs text-green-300 transition flex w-full max-w-full flex-wrap items-center justify-center gap-3 landscape:w-auto landscape:flex-nowrap">
             © {new Date().getFullYear()} SUSHANT NAIK
           </p>
 
@@ -60,8 +60,8 @@ export default function SiteFooter() {
 )}
           </div>
 
-          <p className="font-mono text-[10px] text-gray-700">
-            BUILD // CREATE // DEPLOY
+          <p className="px-4 py-2 font-mono text-xs text-green-300 transition flex w-full max-w-full flex-wrap items-center justify-center gap-3 landscape:w-auto landscape:flex-nowrap">
+            THINK // CODE // DEPLOY // MANAGE // DEVELOP
           </p>
 
         </div>

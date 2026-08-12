@@ -35,32 +35,11 @@ const skills = [
   "GitHub",
 ];
 
-const capabilities = [
-  {
-    icon: "<S/>",
-    title: "WEB APPS",
-    text: "Modern responsive applications",
-  },
-  {
-    icon: "AI",
-    title: "AI PROJECTS",
-    text: "AI-powered tools & experiments",
-  },
-  {
-    icon: "◈",
-    title: "CREATIVE",
-    text: "Design, editing & digital media",
-  },
-  {
-    icon: "∞",
-    title: "EXPERIMENTS",
-    text: "Always building something new",
-  },
-];
+const exp = ((new Date().getFullYear())-2020).toString + "+"
 
 const stats = [
-  { value: "6+", label: "YEARS CODING" },
-  { value: "20+", label: "TECHNOLOGIES" },
+  { value: exp, label: "YEARS CODING" },
+  { value: skills.length, label: "TECHNOLOGIES" },
   { value: "∞", label: "IDEAS" },
 ];
 
@@ -112,19 +91,20 @@ export default async function HomePage() {
                 // ABOUT_ME
               </p>
 
-              <h1 className="mt-4 text-4xl font-black italic tracking-tight sm:text-5xl">
-                SUSHANT
-                <span className="block text-cyan-400 neon-text">
-                  NAIK
-                </span>
+              <h1 className="mt-4 text-4xl font-black italic neon-text tracking-tight sm:text-5xl">
+                SUSHANT NAIK
+                
+                
               </h1>
 
               <p className="mt-5 font-mono text-sm leading-7 text-gray-400">
-                I am a Passionate developer; building :
+                Aspiring Full-Stack Web Developer 
                 <br/>
-                Web applications,
-                AI-powered experiences <br/>
-                <small>and</small>Creative digital projects.
+                -Next.js  -React.js  -Python-Flask -AI
+                <br/>
+                Creator of Waideek & Kumpix 
+                <br/>
+                GSSoC’26 OpenSource Contributor
               </p>
 
 
@@ -199,7 +179,7 @@ export default async function HomePage() {
             <div className="mt-2 text-center">
 
               <div className="font-mono text-xs tracking-[0.5em] text-gray-600">
-                SYSTEM ONLINE
+                I AM ONLINE..
               </div>
 
               <div className="mt-2 flex items-center justify-center gap-2">
@@ -403,32 +383,7 @@ export default async function HomePage() {
         </div>
 
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-
-          {capabilities.map((item) => (
-
-            <div
-              key={item.title}
-              className="capability-card group"
-            >
-
-              <div className="text-4xl font-black text-cyan-400 transition group-hover:text-purple-400">
-                {item.icon}
-              </div>
-
-              <h3 className="mt-5 font-mono text-sm font-bold tracking-wider text-white">
-                {item.title}
-              </h3>
-
-              <p className="mt-2 text-sm text-gray-500">
-                {item.text}
-              </p>
-
-            </div>
-
-          ))}
-
-        </div>
+        
 
       </section>
 
